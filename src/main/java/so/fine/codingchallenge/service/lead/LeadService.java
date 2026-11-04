@@ -62,7 +62,10 @@ public class LeadService {
 
         User savedUser = userRepository.save(user);
         lead.setUser(savedUser);
-        leadRepository.insert(lead);
+        //fix: modify the insert method and put save method instead
+        //The reason we do this is because Spring data JPA repositories don't have
+        //a method called insert()
+        leadRepository.save(lead);
 
         return UserResponse.toUserResponse(savedUser);
     }
