@@ -1,7 +1,8 @@
 package so.fine.codingchallenge.domain.lead;
 
 import lombok.Data;
-import so.codingchallenge.db.entity.lead.Lead;
+//fix: add "fine" in the import statement
+import so.fine.codingchallenge.db.entity.lead.Lead;
 
 @Data
 public class LeadRequest {
