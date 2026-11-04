@@ -4,6 +4,10 @@ import lombok.Data;
 
 import java.util.List;
 
+//fix: add an import called import java.time.LocalDate because it used in this file but is not imported
+import java.time.LocalDate;
+
+
 @Data
 public class DealRequest {
     private String type; // "A" or "B"
