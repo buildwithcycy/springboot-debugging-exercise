@@ -24,7 +24,8 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ResponseEntity<String> handleGeneralException(Exception ex) {
-        return "Internal server error: " + ex.getMessage();
+    	//fix: we wrap the string in the response entity because the method specifies ResponseEntity<String> as the return type
+    	return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal server error: " + ex.getMessage());
     }
 
     @ExceptionHandler(EntityNotFoundException.class)
