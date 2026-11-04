@@ -23,7 +23,8 @@ public class DealMapper {
             dealB.setContractStartDate(request.getContractStartDate());
             deal = dealB;
         } else {
-            throw IllegalArgumentException("Invalid deal type: " + request.getType());
+        	//fix: we add the "new" keyword to ensure that the exception is handled
+            throw new IllegalArgumentException("Invalid deal type: " + request.getType());
         }
 
         deal.setName(request.getName());
